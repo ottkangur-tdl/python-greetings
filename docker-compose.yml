@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  python-greetings-app-dev:
+    build: .
+    image: ottkangur/python-greetings-app:latest
+    container_name: python-greetings-app-dev
+    ports:
+      - 7001:3000
+  python-greetings-app-stg:
+    build: .
+    image: ottkangur/python-greetings-app:latest
+    container_name: python-greetings-app-stg
+    ports:
+      - 7002:3000
+  python-greetings-app-prd:
+    build: .
+    image: ottkangur/python-greetings-app:latest
+    container_name: python-greetings-app-prd
+    ports:
+      - 7003:3000
