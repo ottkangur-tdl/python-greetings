@@ -48,7 +48,9 @@ def build_docker_image(){
 
 def deploy(String env){
     echo "Deploying to ${env} environment"
-    sh "docker-compose down"
+    sh "docker pull ottkangur/python-greetings-app:latest"
+    sh "docker-compose stop python-greetings-app-${env}"
+    sh "docker-compose down python-greetings-app-${env}"
     sh "docker-compose up -d python-greetings-app-${env}"
 }
 
