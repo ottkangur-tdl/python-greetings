@@ -56,4 +56,6 @@ def deploy(String env){
 
 def run_tests(String env){
     echo "Running tests in ${env} environment"
+    sh 'docker pull ottkangur/api-tests:latest'
+    sh "docker run --network=host --rm ottkangur/api-tests:latest run greetings greetings_${env}"
 }
