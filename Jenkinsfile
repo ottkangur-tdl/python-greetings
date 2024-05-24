@@ -17,16 +17,16 @@ pipeline {
                 run_tests('dev')
             }
         }
-        // stage('deploy-to-stg') {
-        //     steps {
-        //         deploy('stg')
-        //     }
-        // }
-        // stage('tests-on-stg') {
-        //     steps {
-        //         run_tests('stg')
-        //     }
-        // }
+        stage('deploy-to-stg') {
+            steps {
+                deploy('stg')
+            }
+        }
+        stage('tests-on-stg') {
+            steps {
+                run_tests('stg')
+            }
+        }
         stage('deploy-to-prd') {
             steps {
                 deploy('prd')
